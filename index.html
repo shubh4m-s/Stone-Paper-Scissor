@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Module Test Assignment</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main frame -->
+    <div class="MainFrame">
+        <div class="scoreBoard">
+            <div class="Banner">
+                <p>ROCK<br>PAPER<br>SISSORS</p>
+            </div>
+
+            <div class="scoreCards">
+                <div class="computerScoreCard">
+                    <div id="box1Text">
+                        COMPUTER<br>SCORE
+                    </div>
+                    <div id="box1Score">
+                        0
+                    </div>
+                </div>
+
+                <div class="userScoreCard">
+                    <div id="box2Text">
+                        YOUR<br> SCORE
+                    </div>
+                    <div id="box2Score">
+                        0
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="triangle-container">
+            <div class="icon icon-1">
+                <div class="hand-icon">
+                    <img src="/Game/Images/stone.png" alt="Stone">
+                </div>
+            </div>
+            <div class="icon icon-2">
+                <div class="hand-icon">
+                    <img src="/Game/Images/paper.png" alt="Paper">
+                </div>
+            </div>
+            <div class="icon icon-3">
+                <div class="hand-icon">
+                    <img id="Scissor-img" src="/Game/Images/scissor.png" alt="Scissor">
+                </div>
+            </div>
+        
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+        </div>
+
+        <div class="bottomBtn">
+            <div id="RuleBtn"> 
+                <button class="btn">RULES</button>
+            </div>
+            <div id="NextBtn">
+                <button class="btn next">NEXT</button>
+            </div>
+        </div>
+        
+        <div class="RuleBox">
+            <button class="CloseBtn"><b>X</b></button>
+
+            <div class="ruleContainer">
+                <div class="Banner">
+                    <h2>Game Rules</h2>
+                </div>
+                <div class="Rules">
+                    <ul class="yellow-bullets">
+                        <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                        <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                        <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                        <li>If both players lay down the same hand, each player lays down another hand.</li>
+                    </ul>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Tie Permutations -->
+
+    <!-- Scissor Scissor P1-->
+    <div class="P1-scoreBoard">
+        <div class="P1-Banner">
+            <p>ROCK<br>PAPER<br>SCISSORS</p>
+        </div>
+
+        <div class="P1-scoreCards">
+            <div class="P1-computerScoreCard">
+                <div id="P1-box1Text">COMPUTER<br>SCORE</div>
+                <div id="P1-box1Score">0</div>
+            </div>
+            <div class="P1-userScoreCard">
+                <div id="P1-box2Text">YOUR<br>SCORE</div>
+                <div id="P1-box2Score">0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Divs -->
+    <div class="P1-GameConsole">
+        <div class="P1-playerChoice">
+            <p>YOU PICKED</p>
+            <br>
+            <div class="P1-icon">
+                <img src="/Game/Images/scissor.png" alt="Player Choice">
+            </div>
+        </div>
+    
+        <div class="P1-verdict">
+            <h2>TIE UP</h2>
+            <br>
+            <button class="P1-replayBtn">REPLAY</button>
+        </div>
+    
+        <div class="P1-computerChoice">
+            <p>PC PICKED</p>
+            <br>
+            <div class="P1-icon">
+                <img src="/Game/Images/scissor.png" alt="Computer Choice">
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- RULES Button -->
+    <button class="P1-btn" id="P1-rulesBtn">RULES</button>
+    
+    <!-- Rule Box -->
+    <div class="P1-RuleBox">
+        <button class="P1-CloseBtn"><b>X</b></button>
+        <div class="P1-ruleContainer">
+            <div class="P1-Banner">
+                <h2 class="P1-ruleBoxBannerText">Game Rules</h2>
+            </div>
+            <div class="P1-Rules">
+                <ul class="P1-yellowBullets">
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li>If both players lay down the same hand, each player lays down another hand.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Paper Paper - P2 -->
+    <div class="P2-scoreBoard">
+        <div class="P2-Banner">
+            <p>ROCK<br>PAPER<br>SCISSORS</p>
+        </div>
+
+        <div class="P2-scoreCards">
+            <div class="P2-computerScoreCard">
+                <div id="P2-box1Text">COMPUTER<br>SCORE</div>
+                <div id="P2-box1Score">0</div>
+            </div>
+            <div class="P2-userScoreCard">
+                <div id="P2-box2Text">YOUR<br>SCORE</div>
+                <div id="P2-box2Score">0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Divs -->
+    <div class="P2-GameConsole">
+        <div class="P2-playerChoice">
+            <p>YOU PICKED</p>
+            <br>
+            <div class="P2-icon">
+                <img src="/Game/Images/paper.png" alt="Player Choice: Paper">
+            </div>
+        </div>
+    
+        <div class="P2-verdict">
+            <h2>TIE UP</h2>
+            <br>
+            <button class="P2-replayBtn">REPLAY</button>
+        </div>
+    
+        <div class="P2-computerChoice">
+            <p>PC PICKED</p>
+            <br>
+            <div class="P2-icon">
+                <img src="/Game/Images/paper.png" alt="Computer Choice: Paper">
+            </div>
+        </div>
+    </div>
+
+    <!-- RULES Button -->
+    <button class="P2-btn" id="P2-rulesBtn">RULES</button>
+    
+    <!-- Rule Box -->
+    <div class="P2-RuleBox">
+        <button class="P2-CloseBtn"><b>X</b></button>
+        <div class="P2-ruleContainer">
+            <div class="P2-Banner">
+                <h2 class="P2-ruleBoxBannerText">Game Rules</h2>
+            </div>
+            <div class="P2-Rules">
+                <ul class="P2-yellowBullets">
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li>If both players lay down the same hand, each player lays down another hand.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- P3 -->
+    <!-- Scoreboard -->
+    <div class="P3-scoreBoard">
+        <div class="P3-Banner">
+            <p>ROCK<br>PAPER<br>SCISSORS</p>
+        </div>
+
+        <div class="P3-scoreCards">
+            <div class="P3-computerScoreCard">
+                <div id="P3-box1Text">COMPUTER<br>SCORE</div>
+                <div id="P3-box1Score">0</div>
+            </div>
+            <div class="P3-userScoreCard">
+                <div id="P3-box2Text">YOUR<br>SCORE</div>
+                <div id="P3-box2Score">0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Divs -->
+    <div class="P3-GameConsole">
+        <div class="P3-playerChoice">
+            <p>YOU PICKED</p>
+            <br>
+            <div class="P3-icon">
+                <img src="/Game/Images/scissor.png" alt="Player Choice: Scissors">
+            </div>
+        </div>
+    
+        <div class="P3-verdict">
+            <h2>TIE UP</h2>
+            <br>
+            <button class="P3-replayBtn">REPLAY</button>
+        </div>
+    
+        <div class="P3-computerChoice">
+            <p>PC PICKED</p>
+            <br>
+            <div class="P3-icon">
+                <img src="/Game/Images/scissor.png" alt="Computer Choice: Scissors">
+            </div>
+        </div>
+    </div>
+
+    <!-- RULES Button -->
+    <button class="P3-btn" id="P3-rulesBtn">RULES</button>
+    
+    <!-- Rule Box -->
+    <div class="P3-RuleBox">
+        <button class="P3-CloseBtn"><b>X</b></button>
+        <div class="P3-ruleContainer">
+            <div class="P3-Banner">
+                <h2 class="P3-ruleBoxBannerText">Game Rules</h2>
+            </div>
+            <div class="P3-Rules">
+                <ul class="P3-yellowBullets">
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li>If both players lay down the same hand, each player lays down another hand.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Computer Wins -->
+    <!-- P4 paper scissor-->
+    
+        <!-- Scoreboard -->
+    <div class="P4-scoreBoard">
+        <div class="P4-Banner">
+            <p>ROCK<br>PAPER<br>SCISSORS</p>
+        </div>
+
+        <div class="P4-scoreCards">
+            <div class="P4-computerScoreCard">
+                <div id="P4-box1Text">COMPUTER<br>SCORE</div>
+                <div id="P4-box1Score">0</div>
+            </div>
+            <div class="P4-userScoreCard">
+                <div id="P4-box2Text">YOUR<br>SCORE</div>
+                <div id="P4-box2Score">0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Divs -->
+    <div class="P4-GameConsole">
+        <div class="P4-playerChoice">
+            <p>YOU PICKED</p>
+            <br>
+            <div class="P4-icon-1">
+                <img src="/Game/Images/paper.png" alt="Player Choice: Papers">
+            </div>
+        </div>
+    
+        <div class="P4-verdict">
+            <h2>YOU LOST</h2>
+            <h3>AGAINST PC</h3>
+            <br>
+            <button class="P4-replayBtn">PLAY AGAIN</button>
+        </div>
+    
+        <div class="P4-computerChoice">
+            <p>PC PICKED</p>
+            <br>
+            <div class="P4-icon-2">
+                <img src="/Game/Images/scissor.png" alt="Computer Choice: Scissors">
+            </div>
+        </div>
+    </div>
+
+    <!-- RULES Button -->
+    <button class="P4-btn" id="P4-rulesBtn">RULES</button>
+    
+    <!-- Rule Box -->
+    <div class="P4-RuleBox">
+        <button class="P4-CloseBtn"><b>X</b></button>
+        <div class="P4-ruleContainer">
+            <div class="P4-Banner">
+                <h2 class="P4-ruleBoxBannerText">Game Rules</h2>
+            </div>
+            <div class="P4-Rules">
+                <ul class="P4-yellowBullets">
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li>If both players lay down the same hand, each player lays down another hand.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- P5  scissor rock-->
+
+    <!-- Scoreboard -->
+    <div class="P5-scoreBoard">
+        <div class="P5-Banner">
+            <p>ROCK<br>PAPER<br>SCISSORS</p>
+        </div>
+
+        <div class="P5-scoreCards">
+            <div class="P5-computerScoreCard">
+                <div id="P5-box1Text">COMPUTER<br>SCORE</div>
+                <div id="P5-box1Score">0</div>
+            </div>
+            <div class="P5-userScoreCard">
+                <div id="P5-box2Text">YOUR<br>SCORE</div>
+                <div id="P5-box2Score">0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Divs -->
+    <div class="P5-GameConsole">
+        <div class="P5-playerChoice">
+            <p>YOU PICKED</p>
+            <br>
+            <div class="P5-icon-1">
+                <img src="/Game/Images/scissor.png" alt="Player Choice: Scissors">
+            </div>
+        </div>
+    
+        <div class="P5-verdict">
+            <h2>YOU LOST</h2>
+            <h3>AGAINST PC</h3>
+            <br>
+            <button class="P5-replayBtn">PLAY AGAIN</button>
+        </div>
+    
+        <div class="P5-computerChoice">
+            <p>PC PICKED</p>
+            <br>
+            <div class="P5-icon-2">
+                <img src="/Game/Images/stone.png" alt="Computer Choice: Rock">
+            </div>
+        </div>
+    </div>
+
+    <!-- RULES Button -->
+    <button class="P5-btn" id="P5-rulesBtn">RULES</button>
+    
+    <!-- Rule Box -->
+    <div class="P5-RuleBox">
+        <button class="P5-CloseBtn"><b>X</b></button>
+        <div class="P5-ruleContainer">
+            <div class="P5-Banner">
+                <h2 class="P5-ruleBoxBannerText">Game Rules</h2>
+            </div>
+            <div class="P5-Rules">
+                <ul class="P5-yellowBullets">
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li>If both players lay down the same hand, each player lays down another hand.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- P6 Rock Paper -->
+     <!-- Scoreboard -->
+    <div class="P6-scoreBoard">
+        <div class="P6-Banner">
+            <p>ROCK<br>PAPER<br>SCISSORS</p>
+        </div>
+
+        <div class="P6-scoreCards">
+            <div class="P6-computerScoreCard">
+                <div id="P6-box1Text">COMPUTER<br>SCORE</div>
+                <div id="P6-box1Score">0</div>
+            </div>
+            <div class="P6-userScoreCard">
+                <div id="P6-box2Text">YOUR<br>SCORE</div>
+                <div id="P6-box2Score">0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Divs -->
+    <div class="P6-GameConsole">
+        <div class="P6-playerChoice">
+            <p>YOU PICKED</p>
+            <br>
+            <div class="P6-icon-1">
+                <img src="/Game/Images/stone.png" alt="Player Choice: Rock">
+            </div>
+        </div>
+    
+        <div class="P6-verdict">
+            <h2>YOU LOST</h2>
+            <h3>AGAINST PC</h3>
+            <br>
+            <button class="P6-replayBtn">PLAY AGAIN</button>
+        </div>
+    
+        <div class="P6-computerChoice">
+            <p>PC PICKED</p>
+            <br>
+            <div class="P6-icon-2">
+                <img src="/Game/Images/paper.png" alt="Computer Choice: Paper">
+            </div>
+        </div>
+    </div>
+
+    <!-- RULES Button -->
+    <button class="P6-btn" id="P6-rulesBtn">RULES</button>
+    
+    <!-- Rule Box -->
+    <div class="P6-RuleBox">
+        <button class="P6-CloseBtn"><b>X</b></button>
+        <div class="P6-ruleContainer">
+            <div class="P6-Banner">
+                <h2 class="P6-ruleBoxBannerText">Game Rules</h2>
+            </div>
+            <div class="P6-Rules">
+                <ul class="P6-yellowBullets">
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li>If both players lay down the same hand, each player lays down another hand.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- P7 scissor Paper-->
+    <!-- Scoreboard -->
+    <div class="P7-scoreBoard">
+        <div class="P7-Banner">
+            <p>ROCK<br>PAPER<br>SCISSORS</p>
+        </div>
+
+        <div class="P7-scoreCards">
+            <div class="P7-computerScoreCard">
+                <div id="P7-box1Text">COMPUTER<br>SCORE</div>
+                <div id="P7-box1Score">0</div>
+            </div>
+            <div class="P7-userScoreCard">
+                <div id="P7-box2Text">YOUR<br>SCORE</div>
+                <div id="P7-box2Score">0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Divs -->
+    <div class="P7-GameConsole">
+        <div class="P7-playerChoice">
+            <p>YOU PICKED</p>
+            <br>
+            <div class="P7-icon-1">
+                <img src="/Game/Images/scissor.png" alt="Player Choice: Scissor">
+            </div>
+        </div>
+    
+        <div class="P7-verdict">
+            <h2>YOU WIN</h2>
+            <h3>AGAINST PC</h3>
+            <br>
+            <button class="P7-replayBtn">PLAY AGAIN</button>
+        </div>
+    
+        <div class="P7-computerChoice">
+            <p>PC PICKED</p>
+            <br>
+            <div class="P7-icon-2">
+                <img src="/Game/Images/paper.png" alt="Computer Choice: Paper">
+            </div>
+        </div>
+    </div>
+
+    <!-- RULES and NEXT Button -->
+    <div class="P7-buttons">
+        <button class="P7-Rulesbtn" id="P7-RulesBtn">RULES</button>
+        <button class="P7-Nextbtn" id="P7-NextBtn">NEXT</button>
+    </div>
+    
+    <!-- Rule Box -->
+    <div class="P7-RuleBox">
+        <button class="P7-CloseBtn"><b>X</b></button>
+        <div class="P7-ruleContainer">
+            <div class="P7-Banner">
+                <h2 class="P7-ruleBoxBannerText">Game Rules</h2>
+            </div>
+            <div class="P7-Rules">
+                <ul class="P7-yellowBullets">
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li>If both players lay down the same hand, each player lays down another hand.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- P8 Rock Scissor -->
+    <!-- Scoreboard -->
+    <div class="P8-scoreBoard">
+        <div class="P8-Banner">
+            <p>ROCK<br>PAPER<br>SCISSORS</p>
+        </div>
+
+        <div class="P8-scoreCards">
+            <div class="P8-computerScoreCard">
+                <div id="P8-box1Text">COMPUTER<br>SCORE</div>
+                <div id="P8-box1Score">0</div>
+            </div>
+            <div class="P8-userScoreCard">
+                <div id="P8-box2Text">YOUR<br>SCORE</div>
+                <div id="P8-box2Score">0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Divs -->
+    <div class="P8-GameConsole">
+        <div class="P8-playerChoice">
+            <p>YOU PICKED</p>
+            <br>
+            <div class="P8-icon-1">
+                <img src="/Game/Images/stone.png" alt="Player Choice: Rock">
+            </div>
+        </div>
+    
+        <div class="P8-verdict">
+            <h2>YOU WIN</h2>
+            <h3>AGAINST PC</h3>
+            <br>
+            <button class="P8-replayBtn">PLAY AGAIN</button>
+        </div>
+    
+        <div class="P8-computerChoice">
+            <p>PC PICKED</p>
+            <br>
+            <div class="P8-icon-2">
+                <img src="/Game/Images/scissor.png" alt="Computer Choice: Scissor">
+            </div>
+        </div>
+    </div>
+
+    <!-- RULES and NEXT Button -->
+    <div class="P8-buttons">
+        <button class="P8-Rulesbtn" id="P8-RulesBtn">RULES</button>
+        <button class="P8-Nextbtn" id="P8-NextBtn">NEXT</button>
+    </div>
+    
+    <!-- Rule Box -->
+    <div class="P8-RuleBox">
+        <button class="P8-CloseBtn"><b>X</b></button>
+        <div class="P8-ruleContainer">
+            <div class="P8-Banner">
+                <h2 class="P8-ruleBoxBannerText">Game Rules</h2>
+            </div>
+            <div class="P8-Rules">
+                <ul class="P8-yellowBullets">
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li>If both players lay down the same hand, each player lays down another hand.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- P9  Paper Rock-->
+
+    <!-- Scoreboard -->
+    <div class="P9-scoreBoard">
+        <div class="P9-Banner">
+            <p>ROCK<br>PAPER<br>SCISSORS</p>
+        </div>
+
+        <div class="P9-scoreCards">
+            <div class="P9-computerScoreCard">
+                <div id="P9-box1Text">COMPUTER<br>SCORE</div>
+                <div id="P9-box1Score">0</div>
+            </div>
+            <div class="P9-userScoreCard">
+                <div id="P9-box2Text">YOUR<br>SCORE</div>
+                <div id="P9-box2Score">0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Divs -->
+    <div class="P9-GameConsole">
+        <div class="P9-playerChoice">
+            <p>YOU PICKED</p>
+            <br>
+            <div class="P9-icon-1">
+                <img src="/Game/Images/paper.png" alt="Player Choice: Paper">
+            </div>
+        </div>
+    
+        <div class="P9-verdict">
+            <h2>YOU WIN</h2>
+            <h3>AGAINST PC</h3>
+            <br>
+            <button class="P9-replayBtn">PLAY AGAIN</button>
+        </div>
+    
+        <div class="P9-computerChoice">
+            <p>PC PICKED</p>
+            <br>
+            <div class="P9-icon-2">
+                <img src="/Game/Images/stone.png" alt="Computer Choice: Rock">
+            </div>
+        </div>
+    </div>
+
+    <!-- RULES and NEXT Button -->
+    <div class="P9-buttons">
+        <button class="P9-Rulesbtn" id="P9-RulesBtn">RULES</button>
+        <button class="P9-Nextbtn" id="P9-NextBtn">NEXT</button>
+    </div>
+    
+    <!-- Rule Box -->
+    <div class="P9-RuleBox">
+        <button class="P9-CloseBtn"><b>X</b></button>
+        <div class="P9-ruleContainer">
+            <div class="P9-Banner">
+                <h2 class="P9-ruleBoxBannerText">Game Rules</h2>
+            </div>
+            <div class="P9-Rules">
+                <ul class="P9-yellowBullets">
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li>If both players lay down the same hand, each player lays down another hand.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Hurray -->
+    <div class="HurrayPage">
+        <div class="stars">
+            <img src="/Game/Images/Start Group.png" alt="Group-of-stars">
+        </div>
+
+        <div class="trophy">
+            <img src="/Game/Images/Trophy.png" alt="Winning-trophy">
+        </div>
+
+        <div class="Winning-Message">
+            <h1 class="content">HURRAY!!</h1>
+            <p class="content">YOU WON THE GAME</p>
+        </div>
+
+        <div class="playAgainButton">
+            <button id="playagainbtn">PLAY AGAIN</button>
+        </div>  
+    </div> 
+
+    <div class="NextButton">
+        <button id="nextbtn">NEXT</button>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

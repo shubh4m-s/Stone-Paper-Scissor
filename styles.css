@@ -1,0 +1,2728 @@
+body {
+    background-color: #8cc461;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.MainFrame {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+
+.scoreBoard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 13px;
+    background-color: #8cc461;
+    text-align: center;
+    margin-top: 40px;
+    width: 800px;
+    height: 158px;
+}
+
+.Banner p {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.scoreCards {
+    display: flex;
+    gap: 20px;
+    margin-left: 70px;
+}
+
+.computerScoreCard, .userScoreCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 120px;
+    height: 100px;
+}
+
+#box1Text, #box2Text {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: Roboto;   
+    padding-top: 15px;                                                                                                                                        
+}
+
+#box1Score, #box2Score {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 79.69px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    padding-bottom: 5px;
+}
+
+
+.triangle-container {
+    margin-left: 188px;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #8cc461;
+    z-index: 0;
+}
+
+.icon {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid;
+}
+
+.icon-1 {
+    top: 190px; 
+    left: 125px;
+    border-color: #2196F3; 
+    z-index: 2;
+}
+
+.icon-2 {
+    top: 40px;
+    left: 30px;
+    border-color: #FF9800; 
+    z-index: 2;
+}
+
+.icon-3 {
+    top: 40px;
+    left: 200px;
+    border-color: #9C27B0; 
+    z-index: 2;
+}
+
+
+.hand-icon {
+    font-size: 30px;
+}
+
+
+.line {
+    position: absolute;
+    background: #000000A3;
+    height: 10px;
+    transform-origin: left center;
+}
+
+
+.line-1 {
+    width: 180px;
+    top: 100px;
+    left: 88px;
+    transform: rotate(60deg);
+}
+
+.line-2 {
+    width: 180px;
+    top: 250px;
+    left: 170px;
+    transform: rotate(-60deg); 
+}
+
+.line-3 {
+    width: 240px;
+    top: 91px;
+    left: 286px;
+    transform: rotate(180deg); 
+}
+
+#Scissor-img {
+    width: 37px;
+    height: 53.5px;
+    top: 352px;
+    left: 751.92px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.bottomBtn {
+    display: flex;
+    gap: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#RuleBtn .btn, #NextBtn .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.next {
+    display: none; 
+    background: white;
+    color: #8cc461; 
+}
+
+.user-won .next {
+    display: block;
+}
+
+.CloseBtn {
+    background-color: red;
+    color: white;
+    border: solid white 7px;
+    width: 70px;        
+    height: 70px;
+    border-radius: 50%;      
+    font-size: xx-large;
+    font-style: Dangrek;
+    font-size: 44px;
+    font-weight: 400;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+.ruleContainer {
+    background: #004429;
+    border: solid white 7px;
+    width: 278px;
+    height: 100%;
+    top: 330px;
+    left: 1000px;
+    gap: 0px;
+    border-radius: 13px;
+    opacity: 0px;
+}
+
+.Banner {
+    color: white;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-left: 50px;
+}
+
+.yellow-bullets {
+    list-style-type: square;
+    color: white;
+    padding-right: 15px;
+}
+
+.yellow-bullets li::marker {
+    color: #FFD600;
+    font-size: 20px;
+}
+
+.RuleBox {
+    position: fixed;
+    bottom: 70px;
+    right: 30px; 
+    z-index: 10;
+}
+
+.CloseBtn {
+    margin-left: 220px;
+}
+
+/* P1 */
+
+.P1-scoreBoard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 13px;
+    background-color: #8cc461;
+    text-align: center;
+    margin-top: 40px;
+    width: 800px;
+    height: 158px;
+}
+
+.P1-Banner p {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.P1-scoreCards {
+    display: flex;
+    gap: 20px;
+    margin-left: 80px;
+}
+
+.P1-computerScoreCard, .P1-userScoreCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 112px; 
+    height: 110px;
+    margin-left: 7px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#P1-box1Text, #P1-box2Text {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#P1-box1Score, #P1-box2Score {
+    font-size: 72px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+#P1-rulesBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    z-index: 11; 
+}
+
+.P1-RuleBox {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 10;
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.P1-ruleContainer {
+    background: #004429;
+    border: solid white 7px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 13px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.P1-ruleBoxBannerText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 156px;
+    height: 57px;
+    position: relative; 
+    left: 61px;
+    gap: 0px;
+    opacity: 1; 
+    margin: 0px;
+    color: white;
+}
+
+.P1-Rules {
+    padding: 0px 10px 10px 10px;
+}
+
+.P1-yellowBullets {
+    list-style-type: square;
+    color: white;
+    padding-left: 20px;
+}
+
+.P1-yellowBullets li {
+    margin-bottom: 15px; /* Increased gap between list items */
+}
+
+.P1-yellowBullets li:last-child {
+    margin-bottom: 0; /* No extra margin for the last item */
+}
+
+.P1-yellowBullets li::marker {
+    color: #FFD600;
+    font-size: 18px;
+}
+
+.P1-CloseBtn {
+    background-color: red;
+    color: white;
+    border: solid white 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.P1-GameConsole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 199px;
+}
+
+.P1-playerChoice, .P1-computerChoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.P1-icon {
+    width: 110px;
+    height: 110px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid #2196F3; /* Blue border for the icons */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.P1-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.P1-verdict {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.P1-verdict h2 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+}
+
+.P1-replayBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6B6B6B;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.P1-playerChoice p, .P1-computerChoice p {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: center; /* Updated alignment */
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin: 0; /* Ensure no extra margins */
+}
+
+/* P2 */
+
+.P2-scoreBoard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 13px;
+    background-color: #8cc461;
+    text-align: center;
+    margin-top: 40px;
+    width: 800px;
+    height: 158px;
+}
+
+.P2-Banner p {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.P2-scoreCards {
+    display: flex;
+    gap: 20px;
+    margin-left: 80px;
+}
+
+.P2-computerScoreCard, .P2-userScoreCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 112px; 
+    height: 110px;
+    margin-left: 7px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#P2-box1Text, #P2-box2Text {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#P2-box1Score, #P2-box2Score {
+    font-size: 72px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+#P2-rulesBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    z-index: 11; 
+}
+
+.P2-RuleBox {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 10;
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.P2-ruleContainer {
+    background: #004429;
+    border: solid white 7px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 13px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.P2-ruleBoxBannerText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 156px;
+    height: 57px;
+    position: relative; 
+    left: 61px;
+    gap: 0px;
+    opacity: 1; 
+    margin: 0px;
+    color: white;
+}
+
+.P2-Rules {
+    padding: 0px 10px 10px 10px;
+}
+
+.P2-yellowBullets {
+    list-style-type: square;
+    color: white;
+    padding-left: 20px;
+}
+
+.P2-yellowBullets li {
+    margin-bottom: 15px; /* Increased gap between list items */
+}
+
+.P2-yellowBullets li:last-child {
+    margin-bottom: 0; /* No extra margin for the last item */
+}
+
+.P2-yellowBullets li::marker {
+    color: #FFD600;
+    font-size: 18px;
+}
+
+.P2-CloseBtn {
+    background-color: red;
+    color: white;
+    border: solid white 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.P2-GameConsole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 199px;
+}
+
+.P2-playerChoice, .P2-computerChoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.P2-icon {
+    width: 110px;
+    height: 110px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid #2196F3; /* Blue border for the icons */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.P2-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.P2-verdict {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.P2-verdict h2 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+}
+
+.P2-replayBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6B6B6B;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.P2-playerChoice p, .P2-computerChoice p {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: center; /* Updated alignment */
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin: 0; /* Ensure no extra margins */
+}
+
+
+/* P3 */
+.P3-scoreBoard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 13px;
+    background-color: #8cc461;
+    text-align: center;
+    margin-top: 40px;
+    width: 800px;
+    height: 158px;
+}
+
+.P3-Banner p {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.P3-scoreCards {
+    display: flex;
+    gap: 20px;
+    margin-left: 80px;
+}
+
+.P3-computerScoreCard, .P3-userScoreCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 112px; 
+    height: 110px;
+    margin-left: 7px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#P3-box1Text, #P3-box2Text {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#P3-box1Score, #P3-box2Score {
+    font-size: 72px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+#P3-rulesBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    z-index: 11; 
+}
+
+.P3-RuleBox {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 10;
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.P3-ruleContainer {
+    background: #004429;
+    border: solid white 7px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 13px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.P3-ruleBoxBannerText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 156px;
+    height: 57px;
+    position: relative; 
+    left: 61px;
+    gap: 0px;
+    opacity: 1; 
+    margin: 0px;
+    color: white;
+}
+
+.P3-Rules {
+    padding: 0px 10px 10px 10px;
+}
+
+.P3-yellowBullets {
+    list-style-type: square;
+    color: white;
+    padding-left: 20px;
+}
+
+.P3-yellowBullets li {
+    margin-bottom: 15px; /* Increased gap between list items */
+}
+
+.P3-yellowBullets li:last-child {
+    margin-bottom: 0; /* No extra margin for the last item */
+}
+
+.P3-yellowBullets li::marker {
+    color: #FFD600;
+    font-size: 18px;
+}
+
+.P3-CloseBtn {
+    background-color: red;
+    color: white;
+    border: solid white 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.P3-GameConsole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 199px;
+}
+
+.P3-playerChoice, .P3-computerChoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.P3-icon {
+    width: 110px;
+    height: 110px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid #2196F3; /* Blue border for the icons */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.P3-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.P3-verdict {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.P3-verdict h2 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+}
+
+.P3-replayBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6B6B6B;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.P3-playerChoice p, .P3-computerChoice p {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: center; /* Updated alignment */
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin: 0; /* Ensure no extra margins */
+}
+
+
+/* P4 */
+
+.P4-scoreBoard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 13px;
+    background-color: #8cc461;
+    text-align: center;
+    margin-top: 40px;
+    width: 800px;
+    height: 158px;
+}
+
+.P4-Banner p {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.P4-scoreCards {
+    display: flex;
+    gap: 20px;
+    margin-left: 80px;
+}
+
+.P4-computerScoreCard, .P4-userScoreCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 112px; 
+    height: 110px;
+    margin-left: 7px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#P4-box1Text, #P4-box2Text {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#P4-box1Score, #P4-box2Score {
+    font-size: 72px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+#P4-rulesBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    z-index: 11; 
+}
+
+.P4-RuleBox {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 10;
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.P4-ruleContainer {
+    background: #004429;
+    border: solid white 7px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 13px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.P4-ruleBoxBannerText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 156px;
+    height: 57px;
+    position: relative; 
+    left: 61px;
+    gap: 0px;
+    opacity: 1; 
+    margin: 0px;
+    color: white;
+}
+
+.P4-Rules {
+    padding: 0px 10px 10px 10px;
+}
+
+.P4-yellowBullets {
+    list-style-type: square;
+    color: white;
+    padding-left: 20px;
+}
+
+.P4-yellowBullets li {
+    margin-bottom: 15px;
+}
+
+.P4-yellowBullets li:last-child {
+    margin-bottom: 0;
+}
+
+.P4-yellowBullets li::marker {
+    color: #FFD600;
+    font-size: 18px;
+}
+
+.P4-CloseBtn {
+    background-color: red;
+    color: white;
+    border: solid white 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.P4-GameConsole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 199px;
+}
+
+.P4-playerChoice, .P4-computerChoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.P4-icon-1 {
+    width: 110px; 
+    height: 110px; 
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    border: 10px solid #FFA943; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    overflow: hidden; 
+}
+
+.P4-icon-1 img {
+    width: 80%;
+    height: auto;
+    display: block;
+    object-fit: contain; 
+}
+
+
+.P4-icon-2 {
+    width: 110px; 
+    height: 110px; 
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    border: 10px solid #BD00FF; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    overflow: hidden; 
+}
+
+.P4-icon-2 img {
+    width: 60%; 
+    height: auto; 
+    display: block;
+    object-fit: contain; 
+}
+
+
+.P4-verdict {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.P4-verdict h2 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+}
+
+.P4-verdict h3 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
+.P4-replayBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6B6B6B;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.P4-playerChoice p, .P4-computerChoice p {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0;
+}
+
+
+
+/* P5 */
+
+.P5-scoreBoard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 13px;
+    background-color: #8cc461;
+    text-align: center;
+    margin-top: 40px;
+    width: 800px;
+    height: 158px;
+}
+
+.P5-Banner p {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.P5-scoreCards {
+    display: flex;
+    gap: 20px;
+    margin-left: 80px;
+}
+
+.P5-computerScoreCard, .P5-userScoreCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 112px; 
+    height: 110px;
+    margin-left: 7px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#P5-box1Text, #P5-box2Text {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#P5-box1Score, #P5-box2Score {
+    font-size: 72px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+#P5-rulesBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    z-index: 11; 
+}
+
+.P5-RuleBox {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 10;
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.P5-ruleContainer {
+    background: #004429;
+    border: solid white 7px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 13px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.P5-ruleBoxBannerText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 156px;
+    height: 57px;
+    position: relative; 
+    left: 61px;
+    gap: 0px;
+    opacity: 1; 
+    margin: 0px;
+    color: white;
+}
+
+.P5-Rules {
+    padding: 0px 10px 10px 10px;
+}
+
+.P5-yellowBullets {
+    list-style-type: square;
+    color: white;
+    padding-left: 20px;
+}
+
+.P5-yellowBullets li {
+    margin-bottom: 15px;
+}
+
+
+.P5-yellowBullets li::marker {
+    color: #FFD600;
+    font-size: 18px;
+}
+
+.P5-CloseBtn {
+    background-color: red;
+    color: white;
+    border: solid white 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.P5-GameConsole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 199px;
+}
+
+.P5-playerChoice, .P5-computerChoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.P5-icon-1 {
+    width: 110px; 
+    height: 110px; 
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    border: 10px solid #FFA943; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.P5-icon-1 img {
+    width: 80%;
+    height: auto;
+    display: block;
+}
+
+.P5-icon-2 {
+    width: 110px; 
+    height: 110px; 
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    border: 10px solid #BD00FF; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.P5-icon-2 img {
+    width: 60%; 
+    height: auto; 
+    display: block;
+}
+
+.P5-verdict {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.P5-verdict h2 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+}
+
+.P5-verdict h3 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
+.P5-replayBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6B6B6B;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.P5-playerChoice p, .P5-computerChoice p {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0;
+}
+
+/* P6 */
+
+.P6-scoreBoard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 13px;
+    background-color: #8cc461;
+    text-align: center;
+    margin-top: 40px;
+    width: 800px;
+    height: 158px;
+}
+
+.P6-Banner p {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.P6-scoreCards {
+    display: flex;
+    gap: 20px;
+    margin-left: 80px;
+}
+
+.P6-computerScoreCard, .P6-userScoreCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 112px; 
+    height: 110px;
+    margin-left: 7px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#P6-box1Text, #P6-box2Text {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#P6-box1Score, #P6-box2Score {
+    font-size: 72px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+#P6-rulesBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    z-index: 11; 
+}
+
+.P6-RuleBox {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 10;
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.P6-ruleContainer {
+    background: #004429;
+    border: solid white 7px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 13px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.P6-ruleBoxBannerText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 156px;
+    height: 57px;
+    position: relative; 
+    left: 61px;
+    gap: 0px;
+    opacity: 1; 
+    margin: 0px;
+    color: white;
+}
+
+.P6-Rules {
+    padding: 0px 10px 10px 10px;
+}
+
+.P6-yellowBullets {
+    list-style-type: square;
+    color: white;
+    padding-left: 20px;
+}
+
+.P6-yellowBullets li {
+    margin-bottom: 15px;
+}
+
+.P6-yellowBullets li::marker {
+    color: #FFD600;
+    font-size: 18px;
+}
+
+.P6-CloseBtn {
+    background-color: red;
+    color: white;
+    border: solid white 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.P6-GameConsole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 199px;
+}
+
+.P6-playerChoice, .P6-computerChoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.P6-icon-1 {
+    width: 110px; 
+    height: 110px; 
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    border: 10px solid #FFA943; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    overflow: hidden; 
+}
+
+.P6-icon-1 img {
+    width: 80%;
+    height: auto;
+    display: block;
+}
+
+.P6-icon-2 {
+    width: 110px; 
+    height: 110px; 
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    border: 10px solid #BD00FF; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    overflow: hidden; 
+}
+
+.P6-icon-2 img {
+    width: 60%; 
+    height: auto; 
+    display: block;
+}
+
+.P6-verdict {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.P6-verdict h2 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+}
+
+.P6-verdict h3 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
+.P6-replayBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6B6B6B;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.P6-playerChoice p, .P6-computerChoice p {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0;
+}
+
+
+/* P7 */
+
+.P7-scoreBoard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 13px;
+    background-color: #8cc461;
+    text-align: center;
+    margin-top: 40px;
+    width: 800px;
+    height: 158px;
+}
+
+.P7-Banner p {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.P7-scoreCards {
+    display: flex;
+    gap: 20px;
+    margin-left: 80px;
+}
+
+.P7-computerScoreCard, .P7-userScoreCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 112px; 
+    height: 110px;
+    margin-left: 7px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#P7-box1Text, #P7-box2Text {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#P7-box1Score, #P7-box2Score {
+    font-size: 72px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+.P7-GameConsole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 199px;
+}
+
+.P7-playerChoice, .P7-computerChoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.P7-icon-1 {
+    width: 110px; 
+    height: 110px; 
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    border: 10px solid #BD00FF; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    overflow: hidden; 
+}
+
+.P7-icon-1 img {
+    width: 80%;
+    height: auto;
+    display: block;
+}
+
+.P7-icon-2 {
+    width: 110px; 
+    height: 110px; 
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    border: 10px solid #FFA943; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    overflow: hidden; 
+}
+
+.P7-icon-2 img {
+    width: 60%; 
+    height: auto; 
+    display: block;
+}
+
+.P7-verdict {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.P7-verdict h2 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+.P7-verdict h3 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+.P7-replayBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6B6B6B;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.P7-playerChoice p, .P7-computerChoice p {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0;
+}
+
+.P7-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+    z-index: 11;
+}
+
+.P7-Rulesbtn, .P7-Nextbtn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.P7-RuleBox {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 10;
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.P7-ruleContainer {
+    background: #004429;
+    border: solid white 7px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 13px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.P7-ruleBoxBannerText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: left;
+    color: white;
+    margin: 0px;
+}
+
+.P7-CloseBtn {
+    background-color: red;
+    color: white;
+    border: solid white 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.P7-RuleBox {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 10;
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.P7-ruleContainer {
+    background: #004429;
+    border: solid white 7px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 13px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.P7-ruleBoxBannerText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 156px;
+    height: 57px;
+    position: relative; 
+    left: 61px;
+    gap: 0px;
+    opacity: 1; 
+    margin: 0px;
+    color: white;
+}
+
+.P7-Rules {
+    padding: 0px 10px 10px 10px;
+}
+
+.P7-yellowBullets {
+    list-style-type: square;
+    color: white;
+    padding-left: 20px;
+}
+
+.P7-yellowBullets li {
+    margin-bottom: 15px;
+}
+
+.P7-yellowBullets li::marker {
+    color: #FFD600;
+    font-size: 18px;
+}
+
+/* P8 */
+
+.P8-scoreBoard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 13px;
+    background-color: #8cc461;
+    text-align: center;
+    margin-top: 40px;
+    width: 800px;
+    height: 158px;
+}
+
+.P8-Banner p {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.P8-scoreCards {
+    display: flex;
+    gap: 20px;
+    margin-left: 80px;
+}
+
+.P8-computerScoreCard, .P8-userScoreCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 112px; 
+    height: 110px;
+    margin-left: 7px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#P8-box1Text, #P8-box2Text {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#P8-box1Score, #P8-box2Score {
+    font-size: 72px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+.P8-GameConsole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 199px;
+}
+
+.P8-playerChoice, .P8-computerChoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.P8-icon-1 {
+    width: 110px; 
+    height: 110px; 
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    border: 10px solid #BD00FF; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    overflow: hidden; 
+}
+
+.P8-icon-1 img {
+    width: 80%;
+    height: auto;
+    display: block;
+}
+
+.P8-icon-2 {
+    width: 110px; 
+    height: 110px; 
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    border: 10px solid #FFA943; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    overflow: hidden; 
+}
+
+.P8-icon-2 img {
+    width: 60%; 
+    height: auto; 
+    display: block;
+}
+
+.P8-verdict {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.P8-verdict h2 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+.P8-verdict h3 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+.P8-replayBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6B6B6B;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.P8-playerChoice p, .P8-computerChoice p {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0;
+}
+
+.P8-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+    z-index: 11;
+}
+
+.P8-Rulesbtn, .P8-Nextbtn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.P8-RuleBox {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 10;
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.P8-ruleContainer {
+    background: #004429;
+    border: solid white 7px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 13px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.P8-ruleBoxBannerText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: left;
+    color: white;
+    margin: 0px;
+}
+
+.P8-CloseBtn {
+    background-color: red;
+    color: white;
+    border: solid white 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.P8-RuleBox {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 10;
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.P8-ruleContainer {
+    background: #004429;
+    border: solid white 7px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 13px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.P8-ruleBoxBannerText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 156px;
+    height: 57px;
+    position: relative; 
+    left: 61px;
+    gap: 0px;
+    opacity: 1; 
+    margin: 0px;
+    color: white;
+}
+
+.P8-Rules {
+    padding: 0px 10px 10px 10px;
+}
+
+.P8-yellowBullets {
+    list-style-type: square;
+    color: white;
+    padding-left: 20px;
+}
+
+.P8-yellowBullets li {
+    margin-bottom: 15px;
+}
+
+.P8-yellowBullets li::marker {
+    color: #FFD600;
+    font-size: 18px;
+}
+
+
+/* P9 */
+
+.P9-scoreBoard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 13px;
+    background-color: #8cc461;
+    text-align: center;
+    margin-top: 40px;
+    width: 800px;
+    height: 158px;
+}
+
+.P9-Banner p {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.P9-scoreCards {
+    display: flex;
+    gap: 20px;
+    margin-left: 80px;
+}
+
+.P9-computerScoreCard, .P9-userScoreCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 112px; 
+    height: 110px;
+    margin-left: 7px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#P9-box1Text, #P9-box2Text {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#P9-box1Score, #P9-box2Score {
+    font-size: 72px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+.P9-GameConsole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 199px;
+}
+
+.P9-playerChoice, .P9-computerChoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.P9-icon-1 {
+    width: 110px; 
+    height: 110px; 
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    border: 10px solid #BD00FF; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    overflow: hidden; 
+}
+
+.P9-icon-1 img {
+    width: 80%;
+    height: auto;
+    display: block;
+}
+
+.P9-icon-2 {
+    width: 110px; 
+    height: 110px; 
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    border: 10px solid #FFA943; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    overflow: hidden; 
+}
+
+.P9-icon-2 img {
+    width: 60%; 
+    height: auto; 
+    display: block;
+}
+
+.P9-verdict {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.P9-verdict h2 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+.P9-verdict h3 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+.P9-replayBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6B6B6B;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.P9-playerChoice p, .P9-computerChoice p {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0;
+}
+
+.P9-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+    z-index: 11;
+}
+
+.P9-Rulesbtn, .P9-Nextbtn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.P9-RuleBox {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 10;
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.P9-ruleContainer {
+    background: #004429;
+    border: solid white 7px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 13px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.P9-ruleBoxBannerText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: left;
+    color: white;
+    margin: 0px;
+}
+
+.P9-CloseBtn {
+    background-color: red;
+    color: white;
+    border: solid white 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.P9-RuleBox {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 10;
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.P9-ruleContainer {
+    background: #004429;
+    border: solid white 7px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 13px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.P9-ruleBoxBannerText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 156px;
+    height: 57px;
+    position: relative; 
+    left: 61px;
+    gap: 0px;
+    opacity: 1; 
+    margin: 0px;
+    color: white;
+}
+
+.P9-Rules {
+    padding: 0px 10px 10px 10px;
+}
+
+.P9-yellowBullets {
+    list-style-type: square;
+    color: white;
+    padding-left: 20px;
+}
+
+.P9-yellowBullets li {
+    margin-bottom: 15px;
+}
+
+.P9-yellowBullets li::marker {
+    color: #FFD600;
+    font-size: 18px;
+}
+
+/* Hurray Page */
+
+
+.HurrayPage {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.stars {
+    margin-top: 100px;
+    z-index: 0;
+}
+
+.trophy {
+    top: 220px;
+    left: 750px;
+    position: absolute;
+    width: 200.43px;
+    height: 201px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.Winning-Message {
+    color: white;
+    width: 500px;
+    height: 86px;
+    top: 422px;
+    left: 600px;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 600;   
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-underline-position: from-font;
+}
+
+#playagainbtn {
+    background: #FFFFFF;
+    color: black;
+    width: 174px;
+    height: 44px;
+    top: 639px;
+    left: 500px;
+    padding-left: 40px;
+    gap: 0px;
+    border-radius: 9px;
+    opacity: 0px;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 17.58px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    border: solid white 2px;
+}
+
+.playAgainButton {
+    margin-top: 200px;
+    margin-left: 150px;
+}
+
+.NextButton {
+    position: absolute; 
+    bottom: 20px; 
+    right: 20px; 
+}
+
+#nextbtn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
